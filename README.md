@@ -62,11 +62,7 @@ Flutter Developer with 3+ years of experience building scalable, high-performanc
 
 ## 🤝 Connect With Me
 
-- 💼 LinkedIn: https://www.linkedin.com/in/kumark3
-- 🌐 Portfolio: https://kumar-kharare.netlify.app
+- 💼 LinkedIn: <https://www.linkedin.com/in/kumark3>
+- 🌐 Portfolio: <https://kumar-kharare.netlify.app>
 
 ---
-
-⭐ If you find this useful, feel free to star the repository!---
-
-⭐ If you find this useful, feel free to star the repository!
