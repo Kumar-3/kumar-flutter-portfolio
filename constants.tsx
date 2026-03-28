@@ -85,7 +85,7 @@ export const SKILLS: Skill[] = [
 export const EXPERIENCE: Experience[] = [
   {
     company: "SmartQR Technologies Pvt. Ltd",
-    logo: "/logos/smartqr.png", // add logo path
+    logo: "/logos/smartqr.png",
     role: "Senior Flutter Developer",
     period: "Aug 2023 – Present",
     current: true,
@@ -101,7 +101,7 @@ export const EXPERIENCE: Experience[] = [
   },
   {
     company: "PiSyst India Pvt. Ltd",
-    logo: "/logos/pisyst.png", // add logo path
+    logo: "/logos/pisyst.png",
     role: "Flutter Developer",
     employmentType: "Full-time",
     period: "Jun 2022 – Jul 2023 · 1 yr 2 mos",
@@ -161,18 +161,20 @@ export const PROJECTS: Project[] = [
       "https://play.google.com/store/apps/details?id=com.smartqr.prepapqr",
     iosUrl: "https://apps.apple.com/in/app/prepapqr/id6469682291",
   },
+
   {
-    id: "vitadqr",
-    title: "VitaDQR",
+    id: "icollection",
+    title: "I-Collection",
     description:
-      "Vitamin-related diagnostic screening app with limited public distribution.",
-    tags: ["Flutter", "Firebase", "REST APIs"],
+      "Enterprise-grade field collection application used by internal operations teams.",
+    tags: ["Flutter", "Offline Storage", "REST APIs", "Clean Architecture"],
     challenges:
-      "Ensured accurate diagnostic data handling and optimized UI performance for low-end devices.",
-    type: "Medical",
-    imageUrl: vitaQR,
+      "Implemented offline-first architecture with background sync and performance optimization.",
+    type: "Enterprise",
+    imageUrl: ICollectionImg,
     androidUrl:
-      "https://play.google.com/store/apps/details?id=co.in.smartqr.vitadqr",
+      "https://play.google.com/store/apps/details?id=in.co.ingene.icollection",
+    iosUrl: "https://apps.apple.com/in/app/i-collection/id6759319830",
   },
   {
     id: "smarthrms",
@@ -188,6 +190,20 @@ export const PROJECTS: Project[] = [
       "https://play.google.com/store/apps/details?id=in.co.smartqr.smarthrms",
   },
   {
+    id: "vitadqr",
+    title: "VitaDQR",
+    description:
+      "Vitamin-related diagnostic screening app with limited public distribution.",
+    tags: ["Flutter", "Firebase", "REST APIs"],
+    challenges:
+      "Ensured accurate diagnostic data handling and optimized UI performance for low-end devices.",
+    type: "Medical",
+    imageUrl: vitaQR,
+    androidUrl:
+      "https://play.google.com/store/apps/details?id=co.in.smartqr.vitadqr",
+  },
+
+  {
     id: "arogyasakhi",
     title: "Arogya Sakhi",
     description:
@@ -201,19 +217,6 @@ export const PROJECTS: Project[] = [
       "https://play.google.com/store/apps/details?id=com.smartqr.arogyasakhi",
   },
 
-  {
-    id: "icollection",
-    title: "I-Collection",
-    description:
-      "Enterprise-grade field collection application used by internal operations teams.",
-    tags: ["Flutter", "Offline Storage", "REST APIs"],
-    challenges:
-      "Implemented offline-first architecture with background sync and performance optimization.",
-    type: "Enterprise",
-    imageUrl: ICollectionImg,
-    androidUrl:
-      "https://play.google.com/store/apps/details?id=in.co.ingene.icollection",
-  },
   {
     id: "glucoqr",
     title: "GlucoQR",
