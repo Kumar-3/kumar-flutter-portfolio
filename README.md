@@ -1,20 +1,72 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+
+# 👨‍💻 Kumar K. Kharare
+
+### Flutter Developer | Mobile Engineer
+
+[Portfolio](https://kumar-kharare.netlify.app/) •
+[LinkedIn](https://www.linkedin.com/in/kumark3) •
+[GitHub](https://github.com/Kumar-3)
+
 </div>
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## 🚀 About Me
 
-View your app in AI Studio: https://ai.studio/apps/temp/1
+Flutter Developer with 3+ years of experience building scalable, high-performance cross-platform mobile applications.
 
-## Run Locally
+- 📱 Delivered 7+ production apps (Android & iOS)
+- 👥 Applications used by 10K+ users
+- ⚡ Reduced crash rates by 35%
+- 🧠 Strong expertise in Clean Architecture & BLoC/Cubit
+- 🔌 Experience with IoT (BLE, Wi-Fi, UART, Raspberry Pi)
 
-**Prerequisites:**  Node.js
+---
 
+## 🛠️ Tech Stack
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+**Mobile:** Flutter, Dart  
+**Architecture:** Clean Architecture, BLoC/Cubit  
+**Backend & Services:** REST APIs, Firebase  
+**Languages:** Dart, Kotlin, Java, Swift  
+**Tools:** Git, CI/CD, Figma
+
+---
+
+## 📱 Featured Projects
+
+### 🔹 Smart HRMS
+
+- Workforce management application with attendance and tracking
+- Offline-first architecture using Hive
+- Real-time location tracking using Dart isolates
+
+---
+
+### 🔹 HemoQR
+
+- Hemoglobin diagnostic app (10K+ downloads)
+- Camera2 API integration with native modules
+- Python-based inference pipeline
+
+---
+
+### 🔹 PrePapQR
+
+- Women’s health diagnostic application
+- Secure data handling with encryption
+- Guided image capture workflow
+
+---
+
+## 🤝 Connect With Me
+
+- 💼 LinkedIn: https://www.linkedin.com/in/kumark3
+- 🌐 Portfolio: https://kumar-kharare.netlify.app
+
+---
+
+⭐ If you find this useful, feel free to star the repository!---
+
+⭐ If you find this useful, feel free to star the repository!
