@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Smartphone } from "lucide-react";
 import React, { Suspense, lazy, useEffect, useState } from "react";
+import { use3DCapability } from "./hooks/use3DCapability";
 
 const LoadingScene = lazy(() => import("./3D/LoadingScene"));
 
@@ -11,31 +12,12 @@ interface LoadingScreenProps {
 const LOADING_DURATION = 3500; // ms — minimum time the splash stays visible
 const FADE_OUT_DURATION = 800; // ms — exit transition duration
 
-function detectWebGL(): boolean {
-  try {
-    const canvas = document.createElement("canvas");
-    return !!(
-      window.WebGLRenderingContext &&
-      (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
-    );
-  } catch {
-    return false;
-  }
-}
-
 const LoadingScreen: React.FC<LoadingScreenProps> = ({
   onLoadingComplete,
 }) => {
   const reduceMotion = useReducedMotion();
   const [isExiting, setIsExiting] = useState(false);
-  // Computed via lazy initializers so the correct value is already known on
-  // the very first render — deriving these in a useEffect instead left a
-  // one-frame flash of the static fallback icon before flipping to the 3D
-  // scene, since effects only run after the initial paint.
-  const [webglSupported] = useState(detectWebGL);
-  const [isDesktopViewport] = useState(() => window.innerWidth >= 768);
-
-  const show3D = !reduceMotion && webglSupported && isDesktopViewport;
+  const show3D = use3DCapability();
 
   useEffect(() => {
     document.body.style.overflow = "hidden";

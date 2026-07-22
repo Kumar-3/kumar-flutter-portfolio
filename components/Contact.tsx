@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gray-950">
+    <section id="contact" className="py-24 bg-gray-950/50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20">
           <motion.div

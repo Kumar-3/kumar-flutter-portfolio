@@ -1,9 +1,14 @@
 import { Suspense, lazy, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
+import { use3DCapability } from "./components/hooks/use3DCapability";
 import LoadingAnimation from "./components/LoadingAnimation";
 import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/Navbar";
+
+const PortfolioBackground = lazy(
+  () => import("./components/3D/PortfolioBackground"),
+);
 
 // Lazy-loaded sections
 const Hero = lazy(() => import("./components/Hero"));
@@ -37,15 +42,24 @@ function Home() {
 
 function App() {
   const [showLoading, setShowLoading] = useState(true);
+  const show3D = use3DCapability();
 
   return (
     <>
+      {show3D && (
+        <div className="fixed inset-0 -z-10 pointer-events-none">
+          <Suspense fallback={null}>
+            <PortfolioBackground />
+          </Suspense>
+        </div>
+      )}
+
       {showLoading && (
         <LoadingScreen onLoadingComplete={() => setShowLoading(false)} />
       )}
 
       <div
-        className={`min-h-screen bg-black text-white transition-opacity duration-[800ms] ${
+        className={`min-h-screen text-white transition-opacity duration-[800ms] ${
           showLoading ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >
