@@ -1,16 +1,16 @@
-import ArogyaSakhiImg from "./assets/projects/arogyasakhi.png";
-import GlucoQRImg from "./assets/projects/glucoqr.png";
-import HemoQRImg from "./assets/projects/hemoqr.jpg";
-import ICollectionImg from "./assets/projects/icollection.png";
-import PrePapQRImg from "./assets/projects/prepapqr.jpg";
-import smartHive from "./assets/projects/smarthrms.jpg";
-import vitaQR from "./assets/projects/vitadqr.png";
+import ArogyaSakhiImg from "./assets/projects/arogyasakhi.webp";
+import GlucoQRImg from "./assets/projects/glucoqr.webp";
+import HemoQRImg from "./assets/projects/hemoqr.webp";
+import ICollectionImg from "./assets/projects/icollection.webp";
+import PrePapQRImg from "./assets/projects/prepapqr.webp";
+import smartHive from "./assets/projects/smarthrms.webp";
+import vitaQR from "./assets/projects/vitadqr.webp";
 
-import DedicatedResourceImg from "./assets/awards/MDS_P_C2.jpg";
-import OutstandingMonthlyImg from "./assets/awards/OCP_P_C1.jpg";
-import TeamAwardImg from "./assets/awards/TMSCertificate.jpg";
-import FastestLearningImg from "./assets/awards/fastestlearningemployee.jpg";
-import OutstandingPerformanceImg from "./assets/awards/outstandingperformance.jpg";
+import DedicatedResourceImg from "./assets/awards/MDS_P_C2.webp";
+import OutstandingMonthlyImg from "./assets/awards/OCP_P_C1.webp";
+import TeamAwardImg from "./assets/awards/TMSCertificate.webp";
+import FastestLearningImg from "./assets/awards/fastestlearningemployee.webp";
+import OutstandingPerformanceImg from "./assets/awards/outstandingperformance.webp";
 
 import { Achievement, Experience, Project, Skill } from "./types";
 

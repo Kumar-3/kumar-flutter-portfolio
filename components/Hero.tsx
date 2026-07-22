@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import {
   ChevronRight,
+  Download,
   Linkedin,
   Mail,
   Smartphone,
@@ -55,14 +56,20 @@ const Hero: React.FC = () => {
 
           {/* Contact Pills */}
           <div className="flex flex-wrap gap-4 mb-10">
-            <div className="flex items-center gap-2 text-sm text-gray-400 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+            <a
+              href="tel:+919420820223"
+              className="flex items-center gap-2 text-sm text-gray-400 hover:text-teal-400 bg-white/5 hover:border-teal-500/40 px-4 py-3 rounded-full border border-white/10 transition-colors"
+            >
               <Smartphone size={14} className="text-teal-400" />
               +91 94208 20223
-            </div>
-            <div className="flex items-center gap-2 text-sm text-gray-400 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+            </a>
+            <a
+              href="mailto:kumarkharare@gmail.com"
+              className="flex items-center gap-2 text-sm text-gray-400 hover:text-blue-400 bg-white/5 hover:border-blue-500/40 px-4 py-3 rounded-full border border-white/10 transition-colors"
+            >
               <Mail size={14} className="text-blue-400" />
               kumarkharare@gmail.com
-            </div>
+            </a>
           </div>
 
           {/* CTA Buttons */}
@@ -75,6 +82,17 @@ const Hero: React.FC = () => {
             >
               View Projects
               <ChevronRight size={20} />
+            </motion.a>
+
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="/resume.pdf"
+              download="Kumar_Kharare_Resume.pdf"
+              className="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-2xl font-bold hover:bg-white/10 transition-all flex items-center gap-2"
+            >
+              <Download size={20} />
+              Download Resume
             </motion.a>
 
             <motion.a

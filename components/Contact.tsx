@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Phone, Send } from "lucide-react";
 import React, { useState } from "react";
+import Snackbar from "./Snackbar";
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -8,13 +9,35 @@ const Contact: React.FC = () => {
     email: "",
     message: "",
   });
-  const [isSent, setIsSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const encode = (data: Record<string, string>) =>
+    Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]),
+      )
+      .join("&");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Logic for sending email would go here
-    setIsSent(true);
-    setTimeout(() => setIsSent(false), 3000);
+    setStatus("sending");
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formState }),
+      });
+      if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
+      setStatus("sent");
+      setFormState({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error("Contact form submission failed:", err);
+      setStatus("error");
+    } finally {
+      setTimeout(() => setStatus("idle"), 5000);
+    }
   };
 
   const contactItems = [
@@ -92,7 +115,13 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             className="glass-card p-10 rounded-[2.5rem] border-teal-500/10"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              name="contact"
+              data-netlify="true"
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="contact" />
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase text-gray-500 tracking-wider">
                   Your Name
@@ -140,16 +169,28 @@ const Contact: React.FC = () => {
               </div>
 
               <motion.button
+                type="submit"
+                disabled={status === "sending"}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-5 bg-gradient-to-r from-teal-500 to-blue-600 text-white rounded-xl font-bold flex items-center justify-center gap-3 glow-teal"
+                className="w-full py-5 bg-gradient-to-r from-teal-500 to-blue-600 text-white rounded-xl font-bold flex items-center justify-center gap-3 glow-teal disabled:opacity-60"
               >
-                {isSent ? "Message Sent!" : "Send Message"} <Send size={18} />
+                {status === "sending" ? "Sending..." : "Send Message"}
+                <Send size={18} />
               </motion.button>
             </form>
           </motion.div>
         </div>
       </div>
+
+      <Snackbar
+        status={status === "sent" || status === "error" ? status : null}
+        message={
+          status === "sent"
+            ? "Message sent! I'll get back to you soon."
+            : "Couldn't send — please email me directly instead."
+        }
+      />
     </section>
   );
 };

@@ -175,6 +175,7 @@ const Achievement: React.FC = () => {
             <img
               src={preview}
               alt="Certificate"
+              decoding="async"
               className="w-full max-h-[75vh] object-contain rounded-2xl border border-white/10 bg-black"
             />
           </motion.div>

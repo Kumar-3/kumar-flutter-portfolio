@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Smartphone, X } from "lucide-react";
+import { Download, Menu, Smartphone, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 const Navbar: React.FC = () => {
@@ -54,6 +54,16 @@ const Navbar: React.FC = () => {
             </motion.a>
           ))}
           <motion.a
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            href="/resume.pdf"
+            download="Kumar_Kharare_Resume.pdf"
+            className="flex items-center gap-1.5 text-sm font-medium text-gray-300 hover:text-teal-400 transition-colors"
+          >
+            <Download size={16} />
+            Resume
+          </motion.a>
+          <motion.a
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             href="#contact"
@@ -92,6 +102,15 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </a>
               ))}
+              <a
+                href="/resume.pdf"
+                download="Kumar_Kharare_Resume.pdf"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-2 text-lg font-medium text-gray-300 hover:text-teal-400"
+              >
+                <Download size={18} />
+                Resume
+              </a>
             </div>
           </motion.div>
         )}
