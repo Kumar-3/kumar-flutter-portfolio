@@ -1,6 +1,8 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
+import LoadingAnimation from "./components/LoadingAnimation";
+import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/Navbar";
 
 // Lazy-loaded sections
@@ -14,11 +16,7 @@ const Awards = lazy(() => import("./components/Awards"));
 const Contact = lazy(() => import("./components/Contact"));
 const ProjectDetail = lazy(() => import("./components/ProjectDetail"));
 
-const sectionsFallback = (
-  <div className="flex items-center justify-center min-h-screen text-gray-500">
-    Loading portfolio…
-  </div>
-);
+const sectionsFallback = <LoadingAnimation />;
 
 function Home() {
   return (
@@ -38,27 +36,39 @@ function Home() {
 }
 
 function App() {
+  const [showLoading, setShowLoading] = useState(true);
+
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Navbar />
+    <>
+      {showLoading && (
+        <LoadingScreen onLoadingComplete={() => setShowLoading(false)} />
+      )}
 
-      <Routes>
-        <Route
-          path="/project/:id"
-          element={
-            <Suspense fallback={sectionsFallback}>
-              <ProjectDetail />
-            </Suspense>
-          }
-        />
-        {/* Any other path (including plain #about/#skills anchor links, which
-            aren't react-router Links and don't otherwise match a route) falls
-            through to the same Home route, so in-page anchor nav keeps working. */}
-        <Route path="*" element={<Home />} />
-      </Routes>
+      <div
+        className={`min-h-screen bg-black text-white transition-opacity duration-[800ms] ${
+          showLoading ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
+        <Navbar />
 
-      <Footer />
-    </div>
+        <Routes>
+          <Route
+            path="/project/:id"
+            element={
+              <Suspense fallback={sectionsFallback}>
+                <ProjectDetail />
+              </Suspense>
+            }
+          />
+          {/* Any other path (including plain #about/#skills anchor links, which
+              aren't react-router Links and don't otherwise match a route) falls
+              through to the same Home route, so in-page anchor nav keeps working. */}
+          <Route path="*" element={<Home />} />
+        </Routes>
+
+        <Footer />
+      </div>
+    </>
   );
 }
 

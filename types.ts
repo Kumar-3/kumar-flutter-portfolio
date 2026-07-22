@@ -9,6 +9,8 @@ export interface Project {
   downloads?: string;
   androidUrl?: string;
   iosUrl?: string;
+  impactContext?: string;
+  howItWorks?: string[];
 }
 
 export type SkillCategory =

@@ -89,6 +89,35 @@ const ProjectDetail: React.FC = () => {
               </p>
             </div>
 
+            {project.impactContext && (
+              <div>
+                <h2 className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-3">
+                  Why It Matters
+                </h2>
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  {project.impactContext}
+                </p>
+              </div>
+            )}
+
+            {project.howItWorks && (
+              <div>
+                <h2 className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-3">
+                  How It Works
+                </h2>
+                <ol className="space-y-3">
+                  {project.howItWorks.map((step, idx) => (
+                    <li key={idx} className="flex gap-4 text-gray-300 text-lg leading-relaxed">
+                      <span className="shrink-0 w-7 h-7 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-sm font-bold flex items-center justify-center">
+                        {idx + 1}
+                      </span>
+                      {step}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
+
             <div>
               <h2 className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-3">
                 The Approach & Key Challenge

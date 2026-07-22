@@ -140,6 +140,13 @@ export const PROJECTS: Project[] = [
     tags: ["Flutter", "Kotlin", "Swift", "Python (Chaquopy)", "Hive"],
     challenges:
       "Implemented RAW image capture using Android Camera2 via Method Channels and integrated Python-based inference pipelines for ROI processing.",
+    impactContext:
+      "Anemia affects an estimated 67% of children, 57% of women, and 52% of pregnant women in India, per public health data cited by SmartQR — much of it undetected due to limited access to lab infrastructure, especially in underserved communities.",
+    howItWorks: [
+      "Prick a finger with the sterile lancet and collect a drop of blood on the smart test strip.",
+      "Scan the strip using the HemoQR mobile app.",
+      "Get an AI-analyzed hemoglobin reading in about a minute, with results tracked and stored automatically in the app.",
+    ],
     downloads: "12k+",
     type: "Medical",
     imageUrl: HemoQRImg,
@@ -156,6 +163,13 @@ export const PROJECTS: Project[] = [
     tags: ["Flutter", "Cubit", "Python Inference", "Hive Encryption"],
     challenges:
       "Extended ROI and inference pipelines with calibration profiles and ensured encryption of sensitive medical data.",
+    impactContext:
+      "An estimated 12% of women visiting OPDs in India report STI/RTI symptoms, and over 30 million women are considered at risk, per public health data cited by SmartQR — yet most infections go undiagnosed due to limited access and privacy concerns around in-clinic testing.",
+    howItWorks: [
+      "Collect a vaginal fluid sample using the provided sterile swab.",
+      "Transfer the sample onto the test strip's reaction pad.",
+      "Scan the strip with the PrePapQR mobile app to get an instant pH-based health reading, tracked over time in the app.",
+    ],
     downloads: "15k+",
     type: "Medical",
     imageUrl: PrePapQRImg,
