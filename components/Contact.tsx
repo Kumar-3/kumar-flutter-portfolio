@@ -76,9 +76,9 @@ const Contact: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-2">
+            <p className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-2">
               Connect
-            </h4>
+            </p>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-8">
               Let's Build Something <br />
               <span className="text-teal-400">Revolutionary</span>.

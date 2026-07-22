@@ -85,6 +85,8 @@ export const SKILLS: Skill[] = [
 export const EXPERIENCE: Experience[] = [
   {
     company: "SmartQR Technologies Pvt. Ltd",
+    companyDescription:
+      "AI/ML-powered MedTech company building mobile-first, point-of-care diagnostic products for preventive healthcare, with clients including Lupin, Alkem Laboratories, JB Chemicals, and Sun Pharmaceutical Industries.",
     logo: "/logos/smartqr.png",
     role: "Senior Flutter Developer",
     period: "Aug 2023 – Present",

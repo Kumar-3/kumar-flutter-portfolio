@@ -110,9 +110,9 @@ const Achievement: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* ================= CERTIFICATES ================= */}
         <div className="text-center mb-12">
-          <h4 className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-2">
+          <p className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-2">
             Certifications
-          </h4>
+          </p>
           <h2 className="text-4xl font-extrabold">
             Courses & Professional Learning
           </h2>
@@ -126,9 +126,9 @@ const Achievement: React.FC = () => {
 
         {/* ================= AWARDS ================= */}
         <div className="text-center mb-12">
-          <h4 className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-2">
+          <p className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-2">
             Awards
-          </h4>
+          </p>
           <h2 className="text-4xl font-extrabold">
             Recognition & Achievements
           </h2>

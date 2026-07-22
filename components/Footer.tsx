@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
               <Smartphone className="text-white w-5 h-5" />
             </div>
             <span className="text-lg font-bold text-white font-heading tracking-tight">
-              Kumar<span className="text-teal-400">.</span>Dev
+              Kumar<span className="text-teal-400">.</span>K
             </span>
           </div>
 

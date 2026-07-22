@@ -26,6 +26,7 @@ export type Skill = {
 
 export interface Experience {
   company: string;
+  companyDescription?: string;
   logo?: string;
   role: string;
   employmentType?: "Full-time" | "Internship" | "Contract";

@@ -9,7 +9,7 @@ const Education: React.FC = () => {
     <section id="education" className="py-24 bg-gray-950/20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h4 className="text-blue-500 font-bold uppercase tracking-widest text-sm mb-2">Education</h4>
+          <p className="text-blue-500 font-bold uppercase tracking-widest text-sm mb-2">Education</p>
           <h2 className="text-4xl md:text-5xl font-extrabold">Academic Foundation</h2>
         </div>
 

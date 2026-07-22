@@ -9,7 +9,7 @@ const Experience: React.FC = () => {
     <section id="experience" className="py-24">
       <div className="max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h4 className="text-purple-500 font-bold uppercase tracking-widest text-sm mb-2">Career</h4>
+          <p className="text-purple-500 font-bold uppercase tracking-widest text-sm mb-2">Career</p>
           <h2 className="text-4xl md:text-5xl font-extrabold">Professional Journey</h2>
         </div>
 
@@ -38,6 +38,12 @@ const Experience: React.FC = () => {
                     <Calendar size={14} /> {exp.period}
                   </div>
                 </div>
+
+                {exp.companyDescription && (
+                  <p className="text-xs text-gray-500 italic leading-relaxed mb-6 pb-6 border-b border-white/5">
+                    {exp.companyDescription}
+                  </p>
+                )}
 
                 <ul className="space-y-3">
                   {exp.points.map((point, pIdx) => (

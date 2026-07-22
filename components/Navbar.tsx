@@ -75,7 +75,8 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white"
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          className="md:hidden text-white p-3 -m-3"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}

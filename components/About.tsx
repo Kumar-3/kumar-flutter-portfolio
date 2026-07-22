@@ -38,9 +38,9 @@ const About: React.FC = () => {
             className="space-y-8"
           >
             <div>
-              <h4 className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-2">
+              <p className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-2">
                 About Me
-              </h4>
+              </p>
 
               <h2 className="text-4xl lg:text-5xl font-extrabold mb-6">
                 Flutter-First Developer Focused on{" "}

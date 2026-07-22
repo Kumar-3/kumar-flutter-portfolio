@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { DownloadCloud } from "lucide-react";
+import { DownloadCloud, FileText } from "lucide-react";
 import React from "react";
 import { FaAndroid, FaApple } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { PROJECTS } from "../constants";
 
 const Projects: React.FC = () => {
@@ -11,9 +12,9 @@ const Projects: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">
-            <h4 className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-2">
+            <p className="text-teal-400 font-bold uppercase tracking-widest text-sm mb-2">
               Portfolio
-            </h4>
+            </p>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
               Featured Applications
             </h2>
@@ -93,6 +94,15 @@ const Projects: React.FC = () => {
                       </span>
                     ))}
                   </div>
+
+                  {/* Case Study Link */}
+                  <Link
+                    to={`/project/${project.id}`}
+                    className="w-full mb-3 py-3 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-teal-400 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 border border-white/10 transition-all"
+                  >
+                    <FileText size={16} />
+                    View Case Study
+                  </Link>
 
                   {/* Platform Links */}
                   <div className="flex gap-3">
